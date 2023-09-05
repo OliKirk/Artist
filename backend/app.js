@@ -38,8 +38,13 @@ app.post("/artists", (req, res) => {
   console.log(req.body);
   const newArtist = {
     id: new Date().getTime(),
-    task: req.body.task,
-    completed: req.body.completed,
+    name: req.name.artist,
+    birthday: req.birthday.artist,
+    genres: req.genres.artist,
+    labels: req.labels.artist,
+    website: req.website.artist,
+    image: req.image.artist,
+    shortDescription: req.shortDescription.artist,
   };
   console.log(newArtist);
 
