@@ -1,4 +1,4 @@
-main {
+/* main {
   background: wheat;
   animation: fadeIn 0.4s;
   padding: 220px 0 0;
@@ -6,7 +6,6 @@ main {
 }
 
 .background-main {
-  background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/1400/9112b576009313.5c5ca8e8c45c3.jpg");
   background-color: gray;
   background-blend-mode: multiply;
   background-size: cover;
@@ -132,10 +131,159 @@ dialog::backdrop {
   background: rgb(172, 198, 201, 0.8);
 }
 
-/* .dialog-grid {
+dialog h4 {
+  margin-bottom: 0;
+}
+
+dialog ul {
+  margin: 0.5em 0 1em;
+  padding-inline-start: 1.5em;
+}
+
+dialog p {
+  margin: 0.5em 0 1em;
+} */
+
+/* chat gpt bud  */
+
+main {
+  background: #f2e8dc; /* A warm beige background */
+  animation: fadeIn 0.4s;
+  padding: 220px 0 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.background-main {
+  /* Use a muted blue-gray background image */
+  background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/1400/9112b576009313.5c5ca8e8c45c3.jpg");
+  background-color: #506c7f; /* Fallback color */
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+  padding: 1em;
+}
+
+@media (min-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1200px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1500px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+.grid-item {
+  border-color: #8b5b92; /* A soft purple border color */
+  border-radius: 2px;
+  border-style: solid;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
+  padding: 1.5em;
+  background-color: rgba(255, 255, 255, 0.9); /* A slightly transparent white background */
+  transition: 0.5s;
+  animation: fadeIn 0.5s;
+}
+
+.grid-item:hover {
+  box-shadow: 8px 8px 16px 16px #8b5b92; /* Purple box shadow on hover */
+}
+
+.grid-item img {
+  border-color: #ffd700; /* Goldenrod border color */
+  border-radius: 2px;
+  border-style: solid;
+  cursor: pointer;
+  width: 100%;
+  height: auto; /* Auto height for images */
+  object-fit: cover;
+}
+
+.grid-item h2 {
+  cursor: pointer;
+  margin: 0.3em 0;
+}
+
+.grid-container .btns {
+  padding: 1em 0 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
-} */
+  gap: 1em;
+}
+
+.grid-container .btns button {
+  border-color: #ffd700; /* Goldenrod border color */
+  border-radius: 2px;
+  border-style: solid;
+  width: 100%;
+  background-color: #506c7f; /* Blue-gray background color for buttons */
+  color: #f2e8dc; /* Beige text color */
+}
+
+form {
+  margin: 2em auto 0;
+  background-color: #f2e8dc; /* Beige background color */
+  padding: 1em 1em 2em;
+  text-align: left;
+}
+
+button {
+  font-weight: 300;
+  font-size: 1em;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 2px;
+  color: #f2e8dc; /* Beige text color */
+  background-color: #8b5b92; /* Purple background color for buttons */
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 1em 1em;
+  width: 100%;
+  max-width: 380px;
+  display: grid;
+  margin: auto;
+}
+
+.close-btn input {
+  margin: 1em auto;
+  width: 100%;
+  max-width: 350px;
+  padding: 1em;
+  border: 2px solid #8b5b92; /* Purple border color for inputs */
+  display: block;
+  background: #f2e8dc; /* Beige background color for inputs */
+}
+
+dialog {
+  border-color: #8b5b92; /* Purple border color for dialog */
+  background-color: #f2e8dc; /* Beige background color for dialog */
+  width: 30vw;
+  padding: 2em 1em;
+}
+
+dialog::backdrop {
+  background: rgba(172, 198, 201, 0.8); /* A semi-transparent blue-gray backdrop for dialog */
+}
 
 dialog h4 {
   margin-bottom: 0;

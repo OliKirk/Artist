@@ -1,4 +1,4 @@
-header {
+/* header {
   font-family: Arial, Helvetica, sans-serif;
   color: black;
   position: fixed;
@@ -25,6 +25,44 @@ header h1 {
   letter-spacing: 2px;
   background-repeat: no-repeat;
   opacity: 1;
+}
+
+.sex {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.create-champ-bt {
+  grid-area: 5 /5 /5 / 5;
+} */
+
+/* chat gpt bud  */
+
+header {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000; /* Black text color */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 10px;
+  display: flex;
+  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-height: 100vh;
+  background: linear-gradient(90deg, #f0cd74, rgba(102, 51, 153, 0.651)); /* Gradient background */
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-repeat: no-repeat;
+  opacity: 1;
+}
+
+header h1 {
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .sex {
