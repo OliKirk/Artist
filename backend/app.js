@@ -62,7 +62,7 @@ app.put("/artists/:id", async (req, res) => {
   console.log(body);
   artistToUpdate.name = body.name;
   artistToUpdate.birthday = body.birthday;
-  artistToUpdate.genres = body.genre;
+  artistToUpdate.genres = body.genres;
   artistToUpdate.labels = body.labels;
   artistToUpdate.website = body.website;
   artistToUpdate.image = body.image;
