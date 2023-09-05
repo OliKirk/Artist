@@ -1,90 +1,10 @@
 [
-  {
-    "id": 1,
-    "name": "John Smith",
-    "birthdate": "1985-03-12",
-    "activeSince": "2005-01-20",
-    "genres": ["Pop", "Rock"],
-    "labels": ["Universal Music", "Sony Music"],
-    "website": "http://www.johnsmithmusic.com",
-    "image": "http://www.johnsmithmusic.com/images/profile.jpg",
-    "shortDescription": "En populær rock- og popmusiker."
-  },
-  {
-    "id": 2,
-    "name": "Maria Lopez",
-    "birthdate": "1990-07-25",
-    "activeSince": "2010-04-15",
-    "genres": ["Latin", "Pop"],
-    "labels": ["Sony Music", "Warner Music"],
-    "website": "http://www.marialopezmusic.com",
-    "image": "http://www.marialopezmusic.com/images/profile.jpg",
-    "shortDescription": "En berømt latin-popkunstner med en passion for sang og dans."
-  },
-  {
-    "id": 3,
-    "name": "David Kim",
-    "birthdate": "1988-12-03",
-    "activeSince": "2008-06-10",
-    "genres": ["Klassisk", "Orkestral"],
-    "labels": ["Deutsche Grammophon", "Sony Classical"],
-    "website": "http://www.davidkimmusic.com",
-    "image": "http://www.davidkimmusic.com/images/profile.jpg",
-    "shortDescription": "En talentfuld klassisk musiker med en forkærlighed for orkestral musik."
-  },
-  {
-    "id": 4,
-    "name": "Emily Jones",
-    "birthdate": "1995-04-18",
-    "activeSince": "2015-02-09",
-    "genres": ["Country", "Folk"],
-    "labels": ["Big Machine Records", "Warner Bros. Records"],
-    "website": "http://www.emilyjonesmusic.com",
-    "image": "http://www.emilyjonesmusic.com/images/profile.jpg",
-    "shortDescription": "En dygtig country- og folkemusikalsk kunstner med en unik stemme."
-  },
-  {
-    "id": 5,
-    "name": "Michael Brown",
-    "birthdate": "1980-09-08",
-    "activeSince": "2000-05-12",
-    "genres": ["Hip-Hop", "R&B"],
-    "labels": ["Def Jam Recordings", "Atlantic Records"],
-    "website": "http://www.michaelbrownmusic.com",
-    "image": "http://www.michaelbrownmusic.com/images/profile.jpg",
-    "shortDescription": "En indflydelsesrig hip-hop og R&B-artist med et stort musikalsk talent."
-  },
-  {
-    "id": 6,
-    "name": "Sophie White",
-    "birthdate": "1993-11-30",
-    "activeSince": "2013-08-21",
-    "genres": ["Elektronisk", "Pop"],
-    "labels": ["Interscope Records", "Astralwerks"],
-    "website": "http://www.sophiewhitemusic.com",
-    "image": "http://www.sophiewhitemusic.com/images/profile.jpg",
-    "shortDescription": "En elektronisk og popmusikalsk sensation med en unik lyd."
-  },
-  {
-    "id": 7,
-    "name": "Daniel Martinez",
-    "birthdate": "1987-06-14",
-    "activeSince": "2007-03-02",
-    "genres": ["Rock", "Alternativ"],
-    "labels": ["Warner Music", "Sub Pop"],
-    "website": "http://www.danielmartinezmusic.com",
-    "image": "http://www.danielmartinezmusic.com/images/profile.jpg",
-    "shortDescription": "En dygtig rock- og alternativ kunstner med en lidenskab for musik."
-  },
-  {
-    "id": 8,
-    "name": "Sarah Johnson",
-    "birthdate": "1998-02-22",
-    "activeSince": "2018-10-17",
-    "genres": ["Pop", "Soul"],
-    "labels": ["Columbia Records", "RCA Records"],
-    "website": "http://www.sarahjohnsonmusic.com",
-    "image": "http://www.sarahjohnsonmusic.com/images/profile.jpg",
-    "shortDescription": "En talentfuld pop- og soulmusiker med en unik stemme og stærke tekster."
-  }
+  { "id": 1, "name": "John Smith", "birthdate": "1985-03-12", "activeSince": "2005-01-20", "genres": ["Pop", "Rock"], "labels": ["Universal Music", "Sony Music"], "website": "http://www.johnsmithmusic.com", "image": "http://www.johnsmithmusic.com/images/profile.jpg", "shortDescription": "En populær rock- og popmusiker." },
+  { "id": 2, "name": "Maria Lopez", "birthdate": "1990-07-25", "activeSince": "2010-04-15", "genres": ["Latin", "Pop"], "labels": ["Sony Music", "Warner Music"], "website": "http://www.marialopezmusic.com", "image": "http://www.marialopezmusic.com/images/profile.jpg", "shortDescription": "En berømt latin-popkunstner med en passion for sang og dans." },
+  { "id": 3, "name": "David Kim", "birthdate": "1988-12-03", "activeSince": "2008-06-10", "genres": ["Klassisk", "Orkestral"], "labels": ["Deutsche Grammophon", "Sony Classical"], "website": "http://www.davidkimmusic.com", "image": "http://www.davidkimmusic.com/images/profile.jpg", "shortDescription": "En talentfuld klassisk musiker med en forkærlighed for orkestral musik." },
+  { "id": 4, "name": "Emily Jones", "birthdate": "1995-04-18", "activeSince": "2015-02-09", "genres": ["Country", "Folk"], "labels": ["Big Machine Records", "Warner Bros. Records"], "website": "http://www.emilyjonesmusic.com", "image": "http://www.emilyjonesmusic.com/images/profile.jpg", "shortDescription": "En dygtig country- og folkemusikalsk kunstner med en unik stemme." },
+  { "id": 5, "name": "Michael Brown", "birthdate": "1980-09-08", "activeSince": "2000-05-12", "genres": ["Hip-Hop", "R&B"], "labels": ["Def Jam Recordings", "Atlantic Records"], "website": "http://www.michaelbrownmusic.com", "image": "http://www.michaelbrownmusic.com/images/profile.jpg", "shortDescription": "En indflydelsesrig hip-hop og R&B-artist med et stort musikalsk talent." },
+  { "id": 6, "name": "Sophie White", "birthdate": "1993-11-30", "activeSince": "2013-08-21", "genres": ["Elektronisk", "Pop"], "labels": ["Interscope Records", "Astralwerks"], "website": "http://www.sophiewhitemusic.com", "image": "http://www.sophiewhitemusic.com/images/profile.jpg", "shortDescription": "En elektronisk og popmusikalsk sensation med en unik lyd." },
+  { "id": 7, "name": "Daniel Martinez", "birthdate": "1987-06-14", "activeSince": "2007-03-02", "genres": ["Rock", "Alternativ"], "labels": ["Warner Music", "Sub Pop"], "website": "http://www.danielmartinezmusic.com", "image": "http://www.danielmartinezmusic.com/images/profile.jpg", "shortDescription": "En dygtig rock- og alternativ kunstner med en lidenskab for musik." },
+  { "id": 8, "name": "Soren bejrgsen", "birthdate": "1998-02-22", "activeSince": "2018-10-17", "genres": ["Rock", "Soul"], "labels": ["Columbia Records", "RCA Records"], "website": "http://www.sarahjohnsonmusic.com", "image": "http://www.sarahjohnsonmusic.com/images/profile.jpg", "shortDescription": "En talentfuld pop- og soulmusiker med en unik stemme og stærke tekster." }
 ]
