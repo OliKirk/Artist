@@ -34,21 +34,25 @@ app.get("/artists/:id", async (req, res) => {
   }
 });
 
-app.post("/artists", (req, res) => {
-  console.log(req.body);
-  const newArtist = {
-    id: new Date().getTime(),
-    name: req.name.artist,
-    birthday: req.birthday.artist,
-    genres: req.genres.artist,
-    labels: req.labels.artist,
-    website: req.website.artist,
-    image: req.image.artist,
-    shortDescription: req.shortDescription.artist,
-  };
-  console.log(newArtist);
+app.post("/artists", async (req, res) => {
+  const newArtist = req.body;
+  newArtist.id = new Date().getTime();
+  // const newArtist = {
+  //   id: new Date().getTime(),
+  //   // name: req.name.artist,
+  //   // birthday: req.birthday.artist,
+  //   // genres: req.genres.artist,
+  //   // labels: req.labels.artist,
+  //   // website: req.website.artist,
+  //   // image: req.image.artist,
+  //   // shortDescription: req.shortDescription.artist,
+  // };
+
+  const data = await fs.readFile("backend/data.json");
+  const artists = JSON.parse(data);
 
   artists.push(newArtist);
+  fs.writeFile("backend/data.json", JSON.stringify(artists));
   res.json(artists);
 });
 
