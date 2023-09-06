@@ -77,6 +77,7 @@ async function createArtistClicked(event) {
   const website = form.website.value;
   const image = form.image.value;
   const shortDescription = form.shortDescription.value;
+  const activeSince = form.activeSince.value;
   const res = await createArtist(name, birthdate, activeSince, genres, labels, website, image, shortDescription);
   if (res.ok) {
     updateArtistGrid();
