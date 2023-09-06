@@ -30,7 +30,7 @@ async function createArtist(name, birthdate, activeSince, genres, labels, websit
   return res;
 }
 
-async function deleteArtis(id) {
+async function deleteArtists(id) {
   const res = await fetch(`${endpoint}/artists`, {
     headers: {
       "Content-Type": "application/json",
@@ -66,4 +66,4 @@ async function updateArtist(name, birthdate, activeSince, genres, labels, websit
   }
 }
 
-export { getArtistData, deleteArtis, createArtist, updateArtist };
+export { getArtistData, deleteArtists, createArtist, updateArtist };
