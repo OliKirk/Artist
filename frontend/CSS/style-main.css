@@ -147,7 +147,7 @@ dialog p {
 /* chat gpt bud  */
 
 main {
-  background: #f2e8dc; /* A warm beige background */
+  background: #38568e; /* A deep blue background */
   animation: fadeIn 0.4s;
   padding: 220px 0 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -155,8 +155,8 @@ main {
 
 .background-main {
   /* Use a muted blue-gray background image */
-  background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/1400/9112b576009313.5c5ca8e8c45c3.jpg");
-  background-color: #506c7f; /* Fallback color */
+  /* background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/1400/9112b576009313.5c5ca8e8c45c3.jpg"); */
+  background-color: #4884f1; /* Fallback color */
   background-blend-mode: multiply;
   background-size: cover;
   background-repeat: no-repeat;
@@ -194,7 +194,7 @@ main {
 }
 
 .grid-item {
-  border-color: #8b5b92; /* A soft purple border color */
+  border-color: #ff9a8b; /* A soft orange border color */
   border-radius: 2px;
   border-style: solid;
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
@@ -205,7 +205,7 @@ main {
 }
 
 .grid-item:hover {
-  box-shadow: 8px 8px 16px 16px #8b5b92; /* Purple box shadow on hover */
+  box-shadow: 8px 8px 16px 16px #ff9a8b; /* Orange box shadow on hover */
 }
 
 .grid-item img {
@@ -235,8 +235,8 @@ main {
   border-radius: 2px;
   border-style: solid;
   width: 100%;
-  background-color: #506c7f; /* Blue-gray background color for buttons */
-  color: #f2e8dc; /* Beige text color */
+  background-color: #38568e; /* Deep blue background color for buttons */
+  color: #fff; /* White text color */
 }
 
 form {
@@ -253,8 +253,8 @@ button {
   cursor: pointer;
   border: none;
   border-radius: 2px;
-  color: #f2e8dc; /* Beige text color */
-  background-color: #8b5b92; /* Purple background color for buttons */
+  color: #fff; /* White text color */
+  background-color: #ff9a8b; /* Orange background color for buttons */
   letter-spacing: 0.05em;
   text-transform: uppercase;
   padding: 1em 1em;
@@ -269,13 +269,13 @@ button {
   width: 100%;
   max-width: 350px;
   padding: 1em;
-  border: 2px solid #8b5b92; /* Purple border color for inputs */
+  border: 2px solid #ff9a8b; /* Orange border color for inputs */
   display: block;
   background: #f2e8dc; /* Beige background color for inputs */
 }
 
 dialog {
-  border-color: #8b5b92; /* Purple border color for dialog */
+  border-color: #ff9a8b; /* Orange border color for dialog */
   background-color: #f2e8dc; /* Beige background color for dialog */
   width: 30vw;
   padding: 2em 1em;

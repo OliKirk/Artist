@@ -1,111 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="CSS/style-header.css" />
-    <link rel="stylesheet" href="CSS/style-main.css" />
-    <link rel="stylesheet" href="CSS/style-body.css" />
-    <link rel="stylesheet" href="CSS/style-footer.css" />
-    <link rel="icon" type="image/x-icon" href="pictures/favicon" />
-    <title>My Music</title>
+    <link rel="stylesheet" href="CSS/style-header.css">
+    <link rel="stylesheet" href="CSS/style-body.css">
+    <link rel="stylesheet" href="CSS/style-main.css">
+    <link rel="stylesheet" href="CSS/style-footer.css">
+
+    <title>Music Aritsts</title>
   </head>
   <body>
-    <!-- ========================== Header ==========================  -->
     <header>
-      <h1 href="#" class="">Music Artists</h1>
-
-      <button id="create-champ-btn">Create new artist</button>
-      <section class="tools-grid">
-        <label for="select-sort-by"
-          >Sort by:
+      <h1>Express & Node.JS</h1>
+       <section class="tools-grid">
+        <label for="select-sort-by">Sort by:
           <select id="select-sort-by">
-            <option value="a-z" selected>Not selected</option>
-            <option value="name">Name</option>
-            <option value="genre">Genre</option>
+          <option value="a-z" selected>Not selected</option>
+          <option value="name">Name</option>
+          <option value="genres">Genre(s)</option>
           </select>
         </label>
-        <div>
-          <label for="input-search">Search:</label>
-          <input type="search" id="input-search" placeholder="Search artist" />
-        </div>
       </section>
+      <button id="create-artist-btn">Create Artist</button>
       <button id="filter-btn">Filter</button>
     </header>
-<main class="background-main">
-    <!-- ========================== Main ==========================  -->
-    <section id="artist-data" class="grid-container"></section>
-
-    <!-- ========================== Detail view dialog ========================== -->
-    <dialog id="dialog-detail-view"></dialog>
-
-    <!-- ========================== Filter by genre ========================== -->
-    <dialog id="filter-dialog">
-      <h2>Filter by genre</h2>
-      <form id="filter-by" name="filter-by">
-        <label for="no-filter">No filter</label>
-        <input type="radio" name="filter-by" value="" /><br />
-        <label for="pop">Pop</label>
-        <input type="radio" name="filter-by" value="pop" /><br />
-        <label for="hip hop">Hip Hop</label>
-        <input type="radio" name="filter-by" value="hip hop" /><br />
-        <label for="rock">Rock</label>
-        <input type="radio" name="filter-by" value="Rock" /><br />
-        <label for="contry-music">Contry</label>
-        <input type="radio" name="filter-by" value="contry" /><br />
-        <label for="funk">Funk</label>
-        <input type="radio" name="filter-by" value="funk" /><br />
-        <label for="jazz">Jazz</label>
-        <input type="radio" name="filter-by" value="jazz" /><br />
-        <label for="electronic">Electronic</label>
-        <input type="radio" name="filter-by" value="electronic" /><br />
-      </form>
-      <button id="filter-btn-close">Close</button>
-    </dialog>
-
-    <!-- ========================== Create artist ==========================  -->
-    <dialog id="dialog-create-champ">
-      <h2>Create new Champ</h2>
-      <form method="dialog" id="form-create-artist">
-        <label for="name">Name:</label>
-        <input type="text" name="name" id="name" placeholder="Write new name here" required /><br />
-        <label for="image">Image:</label>
-        <input type="url" id="dialog-image" name="image" placeholder="Paste new image URL here" /><br />
-        <label for="description">Description:</label>
-        <input type="text" name="description" id="description" placeholder="Write new description here" /><br />
-        <label for="contry">Contry:</label>
-        <input type="text" id="contry" name="contry" placeholder="Write new contry here" /><br />
-        <label for="sex">
-          Sex:
-          <select name="sex" id="sex">
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Other">Other</option>
-          </select> </label
-        ><br />
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" placeholder="Write new name here" />
-        <label for="genre">Genre:</label>
-        <input type="text" id="genre" name="genre" placeholder="Put new genre here" required /><br />
-        <button id="create-artist-submit">Create artist</button> <button type="button" class="btn-cancel" id="create-artist-cancel">Cancel</button>
-      </form>
-    </dialog>
-
-    <!-- ========================== Delete artist dialog ========================== -->
-    <dialog id="dialog-delete-artist">
-      <h2>Are you sure you want to delete this artist?</h2>
-      <h2 id="dialog-delete-artist-name">artist name here</h2>
-      <form method="dialog" id="form-delete-artist">
-        <button>Yes</button>
-        <button type="button" class="btn-cancel" id="dialog-delete-cancel-btn">No</button>
-      </form>
-    </dialog>
-
-      <!-- Update artist dialog -->
-      <dialog id="dialog-update-artist">
-        <h2>Update artist</h2>
-        <form method="dialog" id="form-update-artist">
-          <label for="name">Name:</label>
+    <main>
+      <section id="artist-grid" class="grid-container"></section>
+      <!-- ============================== Filter Dialog ============================== -->
+      <!-- ============================== Create Artist Dialog ============================== -->
+      <dialog id="dialog-create-artists">
+        <h2>Create new Artist</h2>
+          <form method="dialog" id="form-create-artists">
+            <label for="name">Name:</label>
           <input
             type="text"
             name="name"
@@ -113,55 +40,68 @@
             placeholder="Write new name here"
             required
           /><br>
-          <label for="image">Image:</label>
-          <input
-            type="url"
-            id="dialog-image"
-            name="image"
-            placeholder="Paste new image URL here"
-          /><br>
-          <label for="description">Description:</label>
+          <label for="birthdate">Birthdate:</label>
           <input
             type="text"
-            name="description"
-            id="description"
-            placeholder="Write new description here"
-          /><br>
-          <label for="contry">Contry:</label>
-          <input
-            type="text"
-            id="region"
-            name="region"
-            placeholder="Write new contry here"
-          /><br>
-          <label for="sex">Sex: 
-            <select name="sex" id="sex">
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-              <option value="Other">Other</option>
-            </select>
-          </label><br>
-        
-          <label for="genre">Genre:</label>
-          <input
-            type="text"
-            id="genre"
-            name="genre"
-            placeholder="Put new genre here"
+            name="birthdate"
+            id="birthdate"
+            placeholder="Write birthdate here"
             required
           /><br>
-
-          <button type="button id="dialog-update-btn">Update champ</button>
-        </form>
-        <button class="btn-cancel" id="dialog-update-close-btn">Cancel</button>
+           <label for="activeSince">ActiveSince:</label>
+          <input
+            type="text"
+            name="activeSince"
+            id="activeSince"
+            placeholder="Write date here"
+            required
+          /><br>
+           <label for="genres">Genre(s):</label>
+          <input
+            type="text"
+            name="genres"
+            id="genres"
+            placeholder="Write genre(s) here"
+            required
+          /><br>
+           <label for="labels">Labels:</label>
+          <input
+            type="text"
+            name="labels"
+            id="labels"
+            placeholder="Write labels here"
+            required
+          /><br>
+           <label for="shortDescription">shortDescription:</label>
+          <input
+            type="text"
+            name="shortDescription"
+            id="shortDescription"
+            placeholder="Write shortDescription here"
+            required
+          /><br>
+           <label for="website">Website:</label>
+          <input
+            type="url"
+            name="website"
+            id="website"
+            placeholder="Insert website here"
+            required
+          /><br>
+           <label for="image">Image:</label>
+          <input
+            type="url"
+            name="image"
+            id="image"
+            placeholder="Insert image here "
+            required
+          />
+          <button id="create-artist-submit">Create artist</button>
+          <button type="button" class="btn-cancel" id="create-champ-cancel">Cancel</button>
+          </form>
       </dialog>
-</main>
-    
-
-    <!-- ==========================  Footer  ========================== -->
-    <footer class="background-footer">
-      <h2>Made by Oliver Kirk</h2>
-    </footer>
+    </main>
+    <footer>Footer Her</footer>
     <script src="JS/script.js" type="module"></script>
   </body>
 </html>
