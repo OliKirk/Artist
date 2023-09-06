@@ -1,102 +1,12 @@
 [
-  {
-    "name": "John Smith",
-    "birthdate": "April 10, 1990",
-    "activeSince": 2008,
-    "genres": ["Rock", "Alternative"],
-    "labels": ["Universal Music", "Indie Records"],
-    "website": "https://www.johnsmithmusic.com",
-    "image": "john_smith.jpg",
-    "shortDescription": "Singer-songwriter known for his heartfelt lyrics."
-  },
-  {
-    "name": "Emily Johnson",
-    "birthdate": "July 25, 1985",
-    "activeSince": 2005,
-    "genres": ["Pop", "Electronic"],
-    "labels": ["Sony Music", "ElectroSound Records"],
-    "website": "https://www.emilyjohnsonmusic.com",
-    "image": "emily_johnson.jpg",
-    "shortDescription": "Electronic pop sensation with a unique sound."
-  },
-  {
-    "name": "Michael Davis",
-    "birthdate": "February 5, 1982",
-    "activeSince": 2003,
-    "genres": ["Hip-Hop", "R&B"],
-    "labels": ["RapCity Records", "Urban Groove"],
-    "website": "https://www.michaeldavismusic.com",
-    "image": "michael_davis.jpg",
-    "shortDescription": "Rap and R&B artist with powerful lyrics."
-  },
-  {
-    "name": "Sarah White",
-    "birthdate": "May 15, 1995",
-    "activeSince": 2010,
-    "genres": ["Indie Folk", "Acoustic"],
-    "labels": ["IndieFolk Records", "Harmony Sounds"],
-    "website": "https://www.sarahwhitemusic.com",
-    "image": "sarah_white.jpg",
-    "shortDescription": "Indie folk singer known for her soulful melodies."
-  },
-  {
-    "name": "David Lee",
-    "birthdate": "March 20, 1988",
-    "activeSince": 2007,
-    "genres": ["Country", "Americana"],
-    "labels": ["Country Roads Music", "Roots Records"],
-    "website": "https://www.davidleemusic.com",
-    "image": "david_lee.jpg",
-    "shortDescription": "Country artist with a heartfelt storytelling style."
-  },
-  {
-    "name": "Anna Carter",
-    "birthdate": "December 8, 1992",
-    "activeSince": 2012,
-    "genres": ["Pop", "R&B"],
-    "labels": ["PopStar Records", "Soulful Sounds"],
-    "website": "https://www.annacartermusic.com",
-    "image": "anna_carter.jpg",
-    "shortDescription": "Pop and R&B sensation with a powerful voice."
-  },
-  {
-    "name": "Alex Turner",
-    "birthdate": "January 6, 1986",
-    "activeSince": 2002,
-    "genres": ["Indie Rock", "Alternative"],
-    "labels": ["IndieRock Records", "AltWave Productions"],
-    "website": "https://www.alexturnermusic.com",
-    "image": "alex_turner.jpg",
-    "shortDescription": "Frontman of Arctic Monkeys, indie rock legend."
-  },
-  {
-    "name": "Ella Davis",
-    "birthdate": "November 12, 1993",
-    "activeSince": 2011,
-    "genres": ["Pop", "Electronic"],
-    "labels": ["ElectroPop Records", "SynthWave Sounds"],
-    "website": "https://www.elladavismusic.com",
-    "image": "ella_davis.jpg",
-    "shortDescription": "Electropop artist with catchy tunes and beats."
-  },
-  {
-    "name": "Daniel Brown",
-    "birthdate": "August 30, 1980",
-    "activeSince": 2001,
-    "genres": ["Rock", "Blues"],
-    "labels": ["RockBlues Records", "Soulful Blues"],
-    "website": "https://www.danielbrownmusic.com",
-    "image": "daniel_brown.jpg",
-    "shortDescription": "Blues-rock guitarist with incredible riffs."
-  },
-  {
-    "name": "Olivia Green",
-    "birthdate": "June 18, 1998",
-    "activeSince": 2015,
-    "genres": ["Pop", "Singer-Songwriter"],
-    "labels": ["PopStar Records", "IndieTunes"],
-    "website": "https://www.oliviagreenmusic.com",
-    "image": "olivia_green.jpg",
-    "shortDescription": "Pop singer-songwriter with emotional lyrics."
-  }
+  { "name": "John Smith", "birthdate": "April 10, 1990", "activeSince": 2008, "genres": ["Rock", "Alternative"], "labels": ["Universal Music", "Indie Records"], "website": "https://www.johnsmithmusic.com", "image": "https://media.printables.com/media/prints/432677/images/3587571_8bbce3a7-9039-4564-abf8-3630545cf933/thumbs/inside/1280x960/jpg/its-fine-model.webp", "shortDescription": "Singer-songwriter known for his heartfelt lyrics." },
+  { "name": "Emily Johnson", "birthdate": "July 25, 1985", "activeSince": 2005, "genres": ["Pop", "Electronic"], "labels": ["Sony Music", "ElectroSound Records"], "website": "https://www.emilyjohnsonmusic.com", "image": "https://media.printables.com/media/prints/432677/images/3587571_8bbce3a7-9039-4564-abf8-3630545cf933/thumbs/inside/1280x960/jpg/its-fine-model.webp", "shortDescription": "Electronic pop sensation with a unique sound." },
+  { "name": "Michael Davis", "birthdate": "February 5, 1982", "activeSince": 2003, "genres": ["Hip-Hop", "R&B"], "labels": ["RapCity Records", "Urban Groove"], "website": "https://www.michaeldavismusic.com", "image": "https://media.printables.com/media/prints/432677/images/3587571_8bbce3a7-9039-4564-abf8-3630545cf933/thumbs/inside/1280x960/jpg/its-fine-model.webp", "shortDescription": "Rap and R&B artist with powerful lyrics." },
+  { "name": "Sarah White", "birthdate": "May 15, 1995", "activeSince": 2010, "genres": ["Indie Folk", "Acoustic"], "labels": ["IndieFolk Records", "Harmony Sounds"], "website": "https://www.sarahwhitemusic.com", "image": "https://media.printables.com/media/prints/432677/images/3587571_8bbce3a7-9039-4564-abf8-3630545cf933/thumbs/inside/1280x960/jpg/its-fine-model.webp", "shortDescription": "Indie folk singer known for her soulful melodies." },
+  { "name": "David Lee", "birthdate": "March 20, 1988", "activeSince": 2007, "genres": ["Country", "Americana"], "labels": ["Country Roads Music", "Roots Records"], "website": "https://www.davidleemusic.com", "image": "https://media.printables.com/media/prints/432677/images/3587571_8bbce3a7-9039-4564-abf8-3630545cf933/thumbs/inside/1280x960/jpg/its-fine-model.webp", "shortDescription": "Country artist with a heartfelt storytelling style." },
+  { "name": "Anna Carter", "birthdate": "December 8, 1992", "activeSince": 2012, "genres": ["Pop", "R&B"], "labels": ["PopStar Records", "Soulful Sounds"], "website": "https://www.annacartermusic.com", "image": "https://media.printables.com/media/prints/432677/images/3587571_8bbce3a7-9039-4564-abf8-3630545cf933/thumbs/inside/1280x960/jpg/its-fine-model.webp", "shortDescription": "Pop and R&B sensation with a powerful voice." },
+  { "name": "Alex Turner", "birthdate": "January 6, 1986", "activeSince": 2002, "genres": ["Indie Rock", "Alternative"], "labels": ["IndieRock Records", "AltWave Productions"], "website": "https://www.alexturnermusic.com", "image": "https://media.printables.com/media/prints/432677/images/3587571_8bbce3a7-9039-4564-abf8-3630545cf933/thumbs/inside/1280x960/jpg/its-fine-model.webp", "shortDescription": "Frontman of Arctic Monkeys, indie rock legend." },
+  { "name": "Ella Davis", "birthdate": "November 12, 1993", "activeSince": 2011, "genres": ["Pop", "Electronic"], "labels": ["ElectroPop Records", "SynthWave Sounds"], "website": "https://www.elladavismusic.com", "image": "https://media.printables.com/media/prints/432677/images/3587571_8bbce3a7-9039-4564-abf8-3630545cf933/thumbs/inside/1280x960/jpg/its-fine-model.webpg", "shortDescription": "Electropop artist with catchy tunes and beats." },
+  { "name": "Daniel Brown", "birthdate": "August 30, 1980", "activeSince": 2001, "genres": ["Rock", "Blues"], "labels": ["RockBlues Records", "Soulful Blues"], "website": "https://www.danielbrownmusic.com", "image": "https://media.printables.com/media/prints/432677/images/3587571_8bbce3a7-9039-4564-abf8-3630545cf933/thumbs/inside/1280x960/jpg/its-fine-model.webp", "shortDescription": "Blues-rock guitarist with incredible riffs." },
+  { "name": "Olivia Green", "birthdate": "June 18, 1998", "activeSince": 2015, "genres": ["Pop", "Singer-Songwriter"], "labels": ["PopStar Records", "IndieTunes"], "website": "https://www.oliviagreenmusic.com", "image": "https://media.printables.com/media/prints/432677/images/3587571_8bbce3a7-9039-4564-abf8-3630545cf933/thumbs/inside/1280x960/jpg/its-fine-model.webp", "shortDescription": "Pop singer-songwriter with emotional lyrics." }
 ]

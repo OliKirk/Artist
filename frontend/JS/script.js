@@ -2,17 +2,16 @@ import { getArtistData, deleteArtis, createArtist, updateArtist } from "./rest-s
 
 window.addEventListener("load", initApp);
 
-// let artists;
-
 function initApp() {
   console.log("initApp is running");
   updateArtistGrid();
 
   document.querySelector("#create-artist-btn").addEventListener("click", showArtistDialog);
+  document.querySelector("#delete-artist-btn").addEventListener("click", deleteArtistClicked);
   document.querySelector("#form-create-artists").addEventListener("submit", createArtistClicked);
-  document.querySelector("#create-champ-cancel .btn-cancel").addEventListener("click", createCancelClicked);
-  document.querySelector("#update-artist").addEventListener("submit", updateArtistClicked);
-  document.querySelector("#delete-artist").addEventListener("submit", deleteArtistClicked);
+  document.querySelector("#form-create-artists .btn-cancel").addEventListener("click", createCancelClicked);
+
+  // document.querySelector("#update-artist").addEventListener("submit", updateArtistClicked);
 }
 
 async function updateArtistGrid() {
@@ -31,13 +30,13 @@ function showArtists(listOfArtists) {
     <h2>${artist.name}</h2>
     <h2>${artist.shortDescription}</h2>
     <div class="btn">
-    <button id="delete-artist-btn" class="delete-artist">Delete</button>
+    <button id="delete-artist-btn" class="delete-artist-btn">Delete</button>
     <button id="update-artist-btn" class="update-artist">Update</button>
     </div>
     </article>`
     );
-    // document.querySelector("#artits article:last-child .delete-artist").addEventListener("click", deleteClicked);
-    // document.querySelector("#artits article:last-child .update-artist").addEventListener("click", updateClicked);
+    document.querySelector("#artits-data article:last-child .delete-artist-btn").addEventListener("click", deleteArtistClicked);
+    // document.querySelector("#artits-data article:last-child .update-artist-btn").addEventListener("click", updateArtistClicked);
   }
 }
 
@@ -59,7 +58,7 @@ async function createArtistClicked(event) {
 }
 
 function deleteArtistClicked(event) {
-  const id = event.taarget.getAtribute("data-id");
+  const id = event.taarget.getAtribute("artist-data");
   deleteArtis(id);
 }
 
@@ -67,6 +66,10 @@ function deleteArtistClicked(event) {
 
 function showArtistDialog() {
   document.querySelector("#dialog-create-artists").showModal();
+}
+
+function createCancelClicked() {
+  document.querySelector("#dialog-create-artists").close();
 }
 
 export { updateArtistGrid };
