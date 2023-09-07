@@ -61,4 +61,16 @@ async function updateArtist(name, birthdate, activeSince, genres, labels, websit
   }
 }
 
-export { getArtistData, deleteArtist, createArtist, updateArtist };
+async function changeFav(artist) {
+  console.log("FAV HER");
+  const res = await fetch(`${endpoint}/artist/fav/${artist.id}`, {
+    mode: "PUT",
+  });
+  if (res.ok) {
+    return res;
+  } else {
+    console.error("Fav Status Fail" + res.status);
+  }
+}
+
+export { getArtistData, deleteArtist, createArtist, updateArtist, changeFav };

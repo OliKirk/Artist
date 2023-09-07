@@ -1,5 +1,5 @@
-import { getArtistData, deleteArtist, createArtist, updateArtist } from "./rest-service.js";
-import { filterByGenre, sortByChanged } from "./helpers.js";
+import { getArtistData, deleteArtist, createArtist, changeFav, updateArtist } from "./rest-service.js";
+import { sortByChanged, filterChanged } from "./helpers.js";
 window.addEventListener("load", initApp);
 
 let artists;
@@ -13,18 +13,16 @@ function initApp() {
   document.querySelector("#form-create-artists").addEventListener("submit", createArtistClicked);
 
   // <====================== Update artist ======================>
-
   document.querySelector("#form-update-artist").addEventListener("submit", updateArtistClicked);
-  // document.querySelector("#form-update-artist .btn-cancel").addEventListener("click", updateCancelClicked);
+  document.querySelector("#form-update-artist .btn-cancel").addEventListener("click", updateCancelClicked);
   // <====================== Delete artist ======================>
-
   document.querySelector("#form-delete-artist").addEventListener("submit", deleteArtistClicked);
   document.querySelector("#form-delete-artist .btn-cancel").addEventListener("click", deleteCancelClicked);
 
   // <====================== Filter & Sort artist ======================>
   document.querySelector("#filter-btn").addEventListener("click", filterArtistsClicked);
   document.querySelector("#filter-btn-close").addEventListener("click", filterCancelClicked);
-  document.querySelector("#filter-by").addEventListener("change", (event) => showArtists(filterByGenre(event.target.value)));
+  document.querySelector("#filter-by").addEventListener("change", filterChanged);
   document.querySelector("#select-sort-by").addEventListener("change", sortByChanged);
 }
 
@@ -50,6 +48,7 @@ function showArtists(listOfArtists) {
     <p>${artist.shortDescription}</p>
     
     <div class="btns">
+    <button class="fav-artist-btn">Add artist to favorite</button>
     <button class="delete-artist-btn">Delete</button>
     <button class="update-artist-btn">Update</button>
     </div>
@@ -57,29 +56,7 @@ function showArtists(listOfArtists) {
     );
     document.querySelector("#artist-grid article:last-child .delete-artist-btn").addEventListener("click", () => deleteClicked(artist));
     document.querySelector("#artist-grid article:last-child .update-artist-btn").addEventListener("click", () => updateClicked(artist));
-  }
-
-  function openArtistDialog() {
-    const artistHTML = /*HTML*/ `
-      <article id="artistinfo">
-      <h2>${artist.name}</h2>
-      <img class="artistinfo-img" src=${artist.image}>
-        <p>${artist.genres}</p>
-        <p>${artist.birthdate}</p>
-        <p>${artist.activeSince}</p>
-        <p>${artist.labels}</p>
-        <p>${artist.website}</p>
-        <button id="close-btn">Close</button>
-      </article>`;
-    document.querySelector("#dialog-detail-view").insertAdjacentHTML("beforeend", artistHTML);
-    document.querySelector("#dialog-detail-view").showModal();
-
-    document.querySelector("#close-btn").addEventListener("click", closeDialog);
-  }
-
-  function closeDialog() {
-    document.querySelector("#dialog-detail-view").close();
-    document.querySelector("#artistinfo").remove();
+    document.querySelector("#artist-grid article:last-child .fav-artist-btn").addEventListener("click", () => changeFavClicked(artist));
   }
 }
 
@@ -134,6 +111,26 @@ async function updateArtistClicked(event) {
   if (res.ok) {
     updateArtistGrid();
     form.reset();
+  }
+}
+
+async function favArtist(req, res) {
+  const id = Number(req.params.id);
+  const artists = await readArtists();
+  const artistToUpdate = artists.find((artist) => artist.id === id);
+  if (!artistToUpdate) {
+    res.status(404).json({ error: "Artist not found" });
+  } else {
+    artistToUpdate.favorite = !artistToUpdate.favorite;
+    fs.writeFile("data.json", JSON.stringify(artists));
+    res.json(artists);
+  }
+}
+
+async function changeFavClicked(artist) {
+  const res = await changeFav(artist);
+  if (res.ok) {
+    updateArtistGrid();
   }
 }
 
