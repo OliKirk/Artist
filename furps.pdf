@@ -1,17 +1,16 @@
-Functionality: Applikationen skal opfylde kravene for CRUD-operationer, filtrering, sortering og præsentation af kunstnerdata. Funktionaliteten skal være pålidelig og intuitiv.
--
+Functionality: This app live up to all requrements of CRUD functionality.
 
-Usability: Brugergrænsefladen skal være brugervenlig og nem at navigere. Alle CRUD-operationer skal være let tilgængelige, og filtrerings/sorteringsfunktionerne skal være intuitive.
--
 
-Reliability: Applikationen skal være stabil og pålidelig. Dataintegritet og korrekt håndtering af CRUD-operationer er afgørende.
--
+Usability: The user interface is intuitiv for the user and easy to handel. 
 
-Performance: Applikationen skal have en acceptabel ydeevne, herunder hurtig datahentning og responsivitet i brugergrænsefladen.
--
 
-Supportability: Koden skal være velstruktureret og veldokumenteret, så det er nemt for fremtidige udviklere at vedligeholde og udvide applikationen.
--
+Reliability: The application is realible in its handling of CRUD operations. This is done by making error handeling. 
 
-+: Der skal også tages hensyn til andre relevante krav og overvejelser for at sikre en vellykket udvikling og implementering af applikationen. Ud over FURPS-kravene skal udviklingen også overholde generelle principper for kodestruktur, modularitet og afhængighedsstyring, herunder Separation of Concerns, Loose Coupling og High Cohesion.
--
+
+Performance: The users interface is fast adn responsive for the user. 
+
+
+Supportability: The functions are well organised and if other developers were to continue the work, it would be easy to navigate. 
+
+
++: The app lives up to general principles for coding by using modules. So on an eg. by seperating conserns
