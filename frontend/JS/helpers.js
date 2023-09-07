@@ -20,15 +20,4 @@ function compareGenres(artist1, artist2) {
   return artist1.genres.localeCompare(artist2.genres);
 }
 
-async function filterChanged() {
-  const filterField = document.querySelector("#filter-by").value;
-  const artists = await getArtistData();
-  if (filterField === "show-all") {
-    showArtists(artists);
-  } else {
-    const filteredArtists = artists.filter((artist) => artist.favorite === true);
-    showArtists(filteredArtists);
-  }
-}
-
-export { filterChanged, sortByChanged };
+export { sortByChanged };

@@ -23,24 +23,20 @@
         </label>
       </section>
       <button id="create-artist-btn">Create Artist</button>
-      <button id="filter-btn">Filter</button>
+            <!-- ============================== Filter Label ============================== -->
+       <label for="select-filter-by"></label>
+          Filter:
+          <select id="select-filter-by">
+            <option value="show-all">Show all</option>
+            <option value="favorites">Show favorites</option>
+          </select>
+        </label>
     </header>
     <main>
       <section id="artist-grid" class="grid-container"></section>
       <!-- ============================== Detail view Dialog ============================== -->
    <dialog id="dialog-detail-view"></dialog>
-      <!-- ============================== Filter Dialog ============================== -->
-      
-      <dialog id="filter-dialog">
-        <h2>Filter Artists</h2>
-        <form id="filter-by" name="filter-by">
-          <label for="no-filter">Show All</label>
-          <input type="radio" name="filter-by" value=""><br>
-          <label for="fav">Favorites</label>
-          <input type="radio" name="filter-by" value="fav"><br>
-        </form>
-        <button id="filter-btn-close">Close</button>
-      </dialog>
+
       <!-- ============================== Create Artist Dialog ============================== -->
       <dialog id="dialog-create-artists">
         <h2>Create new Artist</h2>

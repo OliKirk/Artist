@@ -1,5 +1,5 @@
 import { getArtistData, deleteArtist, createArtist, changeFav, updateArtist } from "./rest-service.js";
-import { sortByChanged, filterChanged } from "./helpers.js";
+import { sortByChanged } from "./helpers.js";
 window.addEventListener("load", initApp);
 
 let artists;
@@ -20,9 +20,7 @@ function initApp() {
   document.querySelector("#form-delete-artist .btn-cancel").addEventListener("click", deleteCancelClicked);
 
   // <====================== Filter & Sort artist ======================>
-  document.querySelector("#filter-btn").addEventListener("click", filterArtistsClicked);
-  document.querySelector("#filter-btn-close").addEventListener("click", filterCancelClicked);
-  document.querySelector("#filter-by").addEventListener("change", filterChanged);
+  document.querySelector("#select-filter-by").addEventListener("change", filterChanged);
   document.querySelector("#select-sort-by").addEventListener("change", sortByChanged);
 }
 
@@ -150,6 +148,17 @@ async function deleteArtistClicked(event) {
   }
 }
 
+async function filterChanged() {
+  const filterField = document.querySelector("#select-filter-by").value;
+  const artists = await getArtistData();
+  if (filterField === "show-all") {
+    showArtists(artists);
+  } else {
+    const filteredArtists = artists.filter((artist) => artist.fav === true);
+    showArtists(filteredArtists);
+  }
+}
+
 function deleteCancelClicked() {
   document.querySelector("#dialog-delete-artist").close();
 }
@@ -164,10 +173,6 @@ function showArtistDialog() {
 
 function createCancelClicked() {
   document.querySelector("#dialog-create-artists").close();
-}
-
-function filterCancelClicked() {
-  document.querySelector("#filter-dialog").close();
 }
 
 function filterArtistsClicked() {
