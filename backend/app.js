@@ -72,14 +72,28 @@ app.put("/artists/:id", async (req, res) => {
   res.json(artists);
 });
 
+// app.pus("/artists/fav/id"),
+//   async (req, res) => {
+//     const id = req.params.id;
+//     console.log(id);
+
+//     const data = await fs.readFile("backend/data.json");
+//     const artists = JSON.parse(data);
+//     let artistToFav = artists.find((artist) => artist.id == id);
+//     console.log(artistToUpdate);
+
+//     artistToFav.fav = !artistToFav.fav;
+
+//     fs.writeFile("backend/data.json", JSON.stringify(artists));
+//     res.json(artists);
+//   };
+
 app.delete("/artists/:id", async (req, res) => {
   const id = Number(req.params.id);
-
-  const data = await fs.readFile("data.json");
-  const artists = JSON.parse(data);
-
-  const newArtists = artists.filter((artist) => artist.id !== id);
-  fs.writeFile("backend/data.json", JSON.stringify(newArtists));
-
+  console.log(id);
+  const data = await fs.readFile("backend/data.json");
+  let artists = JSON.parse(data);
+  artists = artists.filter((artist) => artist.id !== id);
+  await fs.writeFile("backend/data.json", JSON.stringify(artists));
   res.json(artists);
 });

@@ -30,16 +30,11 @@ async function createArtist(name, birthdate, activeSince, genres, labels, websit
   return res;
 }
 
-async function deleteArtists(id) {
-  const res = await fetch(`${endpoint}/artists`, {
-    headers: {
-      "Content-Type": "application/json",
-    },
+async function deleteArtist(id) {
+  const res = await fetch(`${endpoint}/artists/${id}`, {
     method: "DELETE",
   });
-  if (res.ok) {
-    updateArtistGrid();
-  }
+  return res;
 }
 
 async function updateArtist(name, birthdate, activeSince, genres, labels, website, image, shortDescription) {
@@ -66,4 +61,4 @@ async function updateArtist(name, birthdate, activeSince, genres, labels, websit
   }
 }
 
-export { getArtistData, deleteArtists, createArtist, updateArtist };
+export { getArtistData, deleteArtist, createArtist, updateArtist };
