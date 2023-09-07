@@ -32,9 +32,8 @@ async function updateArtistGrid() {
 function showArtists(listOfArtists) {
   document.querySelector("#artist-grid").innerHTML = "";
   for (const artist of listOfArtists) {
-    document.querySelector("#artist-grid").insertAdjacentHTML(
-      "beforeend",
-      /*HTML*/ `
+    const favoriteButtonText = artist.fav ? "Remove from favorites" : "Add to favorites";
+    const myHTML = /*HTML*/ `
     <article class="artistArticle">
     <img src=${artist.image}>
     <h2>${artist.name}</h2>
@@ -46,15 +45,16 @@ function showArtists(listOfArtists) {
     <p>${artist.shortDescription}</p>
     
     <div class="btns">
-    <button class="fav-artist-btn">Add artist to favorite</button>
+    <button class="fav-btn">${favoriteButtonText}</button>
     <button class="delete-artist-btn">Delete</button>
-    <button class="update-artist-btn">Update</button>
+    <button class="update-btn">Update</button>
     </div>
-    </article>`
-    );
+    </article>`;
+    document.querySelector("#artist-grid").insertAdjacentHTML("beforeend", myHTML);
     document.querySelector("#artist-grid article:last-child .delete-artist-btn").addEventListener("click", () => deleteClicked(artist));
-    document.querySelector("#artist-grid article:last-child .update-artist-btn").addEventListener("click", () => updateClicked(artist));
-    document.querySelector("#artist-grid article:last-child .fav-artist-btn").addEventListener("click", () => changeFavClicked(artist));
+    document.querySelector("#artist-grid article:last-child .update-btn").addEventListener("click", () => updateClicked(artist));
+    document.querySelector("#artist-grid article:last-child .update-btn").addEventListener("click", () => updateClicked(artist));
+    document.querySelector("#artist-grid article:last-child .fav-btn").addEventListener("click", () => changeFavClicked(artist));
   }
 }
 
@@ -69,8 +69,6 @@ async function createArtistClicked(event) {
   const image = form.image.value;
   const shortDescription = form.shortDescription.value;
   const activeSince = form.activeSince.value;
-  // const fav = form.fav.value;
-
   const res = await createArtist(name, birthdate, activeSince, genres, labels, website, image, shortDescription);
   if (res.ok) {
     updateArtistGrid();
@@ -112,18 +110,18 @@ async function updateArtistClicked(event) {
   }
 }
 
-async function favArtist(req, res) {
-  const id = Number(req.params.id);
-  const artists = await readArtists();
-  const artistToUpdate = artists.find((artist) => artist.id === id);
-  if (!artistToUpdate) {
-    res.status(404).json({ error: "Artist not found" });
-  } else {
-    artistToUpdate.favorite = !artistToUpdate.favorite;
-    fs.writeFile("data.json", JSON.stringify(artists));
-    res.json(artists);
-  }
-}
+// async function favArtist(req, res) {
+//   const id = Number(req.params.id);
+//   const artists = await readArtists();
+//   const artistToUpdate = artists.find((artist) => artist.id === id);
+//   if (!artistToUpdate) {
+//     res.status(404).json({ error: "Artist not found" });
+//   } else {
+//     artistToUpdate.favorite = !artistToUpdate.favorite;
+//     fs.writeFile("data.json", JSON.stringify(artists));
+//     res.json(artists);
+//   }
+// }
 
 async function changeFavClicked(artist) {
   const res = await changeFav(artist);

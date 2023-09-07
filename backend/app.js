@@ -87,7 +87,6 @@ app.put("/artists/fav/:id", async (req, res) => {
 
 app.delete("/artists/:id", async (req, res) => {
   const id = Number(req.params.id);
-  console.log(artistToFav);
   const data = await fs.readFile("backend/data.json");
   let artists = JSON.parse(data);
   artists = artists.filter((artist) => artist.id !== id);

@@ -1,0 +1,1 @@
+Hvordan køre jeg programmet:

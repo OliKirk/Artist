@@ -62,14 +62,14 @@ async function updateArtist(name, birthdate, activeSince, genres, labels, websit
 }
 
 async function changeFav(artist) {
-  console.log("FAV HER");
-  const res = await fetch(`${endpoint}/artist/fav/${artist.id}`, {
-    mode: "PUT",
+  console.log("change favorites clicked");
+  const res = await fetch(`${endpoint}/artists/favorites/${artist.id}`, {
+    method: "PUT",
   });
   if (res.ok) {
     return res;
   } else {
-    console.error("Fav Status Fail" + res.status);
+    console.error("Failed to change favorite status. Status: " + res.status);
   }
 }
 
