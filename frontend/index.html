@@ -16,9 +16,9 @@
        <section class="tools-grid">
         <label for="select-sort-by">Sort by:
           <select id="select-sort-by">
-          <option value="a-z" selected>Not selected</option>
+          <option value="" selected>Not selected</option>
           <option value="name">Name</option>
-          <option value="genres">Genre(s)</option>
+          <option value="genres">Genre</option>
           </select>
         </label>
       </section>
@@ -30,6 +30,23 @@
       <!-- ============================== Detail view Dialog ============================== -->
    <dialog id="dialog-detail-view"></dialog>
       <!-- ============================== Filter Dialog ============================== -->
+      
+      <dialog id="filter-dialog">
+        <h2>Filter Artists</h2>
+        <form id="filter-by" name="filter-by">
+          <label for="no-filter">No filter</label>
+          <input type="radio" name="filter-by" value=""><br>
+
+          <label for="fav">Favourites</label>
+          <input type="radio" name="filter-by" value="fav"><br>
+
+          <label for="non-fav">With Out Favourites</label>
+          <input type="radio" name="filter-by" value="non-fav"><br>
+
+      
+        </form>
+        <button id="filter-btn-close">Close</button>
+      </dialog>
       <!-- ============================== Create Artist Dialog ============================== -->
       <dialog id="dialog-create-artists">
         <h2>Create new Artist</h2>
@@ -144,9 +161,9 @@
           <label for="shortDescription">Description:</label>
           <input type="text" id="shortDescription" name="shortDescription" placeholder="Write a short Description" />
           <br>
-          <button type="button id="dialog-update-btn">Update artist</button>
+          <button id="dialog-update-btn">Update artist</button>
+          <button type="button class="btn-cancel" id="dialog-update-close-btn">Cancel</button>
         </form>
-        <button class="btn-cancel" id="dialog-update-close-btn">Cancel</button>
       </dialog>
     </main>
     <footer>Footer Her</footer>

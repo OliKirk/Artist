@@ -1,5 +1,5 @@
 import { getArtistData, deleteArtist, createArtist, updateArtist } from "./rest-service.js";
-
+import { filterByGenre, sortByChanged } from "./helpers.js";
 window.addEventListener("load", initApp);
 
 let artists;
@@ -7,16 +7,25 @@ let artists;
 function initApp() {
   console.log("initApp is running");
   updateArtistGrid();
-
+  // <====================== Create artist ======================>
   document.querySelector("#create-artist-btn").addEventListener("click", showArtistDialog);
   document.querySelector("#form-create-artists .btn-cancel").addEventListener("click", createCancelClicked);
   document.querySelector("#form-create-artists").addEventListener("submit", createArtistClicked);
 
+  // <====================== Update artist ======================>
+
   document.querySelector("#form-update-artist").addEventListener("submit", updateArtistClicked);
   // document.querySelector("#form-update-artist .btn-cancel").addEventListener("click", updateCancelClicked);
+  // <====================== Delete artist ======================>
 
   document.querySelector("#form-delete-artist").addEventListener("submit", deleteArtistClicked);
   document.querySelector("#form-delete-artist .btn-cancel").addEventListener("click", deleteCancelClicked);
+
+  // <====================== Filter & Sort artist ======================>
+  document.querySelector("#filter-btn").addEventListener("click", filterArtistsClicked);
+  document.querySelector("#filter-btn-close").addEventListener("click", filterCancelClicked);
+  document.querySelector("#filter-by").addEventListener("change", (event) => showArtists(filterByGenre(event.target.value)));
+  document.querySelector("#select-sort-by").addEventListener("change", sortByChanged);
 }
 
 async function updateArtistGrid() {
@@ -33,8 +42,13 @@ function showArtists(listOfArtists) {
     <article class="artistArticle">
     <img src=${artist.image}>
     <h2>${artist.name}</h2>
-    <h2>${artist.shortDescription}</h2>
-
+    <p>${artist.shortDescription}</p>
+    <p>${artist.birthdate}</p>
+    <p>${artist.website}</p>
+    <p>${artist.genres}</p>
+    <p>${artist.labels}</p>
+    <p>${artist.shortDescription}</p>
+    
     <div class="btns">
     <button class="delete-artist-btn">Delete</button>
     <button class="update-artist-btn">Update</button>
@@ -42,8 +56,7 @@ function showArtists(listOfArtists) {
     </article>`
     );
     document.querySelector("#artist-grid article:last-child .delete-artist-btn").addEventListener("click", () => deleteClicked(artist));
-    document.querySelector("#artits-grid article:last-child .update-artist-btn").addEventListener("click", () => updateClicked(artist));
-    // document.querySelector("#artist-grid article:last-child .dialog-detail-view").addEventListener("click", openArtistDialog);
+    document.querySelector("#artist-grid article:last-child .update-artist-btn").addEventListener("click", () => updateClicked(artist));
   }
 
   function openArtistDialog() {
@@ -81,9 +94,9 @@ async function createArtistClicked(event) {
   const image = form.image.value;
   const shortDescription = form.shortDescription.value;
   const activeSince = form.activeSince.value;
-  const fav = form.fav.value;
+  // const fav = form.fav.value;
 
-  const res = await createArtist(name, birthdate, activeSince, genres, labels, website, image, shortDescription, fav);
+  const res = await createArtist(name, birthdate, activeSince, genres, labels, website, image, shortDescription);
   if (res.ok) {
     updateArtistGrid();
     form.reset();
@@ -91,6 +104,7 @@ async function createArtistClicked(event) {
 }
 
 function updateClicked(artist) {
+  console.log(artist);
   const updateForm = document.querySelector("#form-update-artist");
   updateForm.name.value = artist.name;
   updateForm.birthdate.value = artist.birthdate;
@@ -99,7 +113,7 @@ function updateClicked(artist) {
   updateForm.website.value = artist.website;
   updateForm.image.value = artist.image;
   updateForm.shortDescription.value = artist.shortDescription;
-  updateForm.fav.value = artist.fav;
+  // updateForm.fav.value = artist.fav;
   updateForm.setAttribute("data-id", artist);
   document.querySelector("#dialog-update-artist").showModal();
 }
@@ -115,8 +129,8 @@ async function updateArtistClicked(event) {
   const image = form.image.value;
   const shortDescription = form.shortDescription.value;
   const activeSince = form.activeSince.value;
-  const fav = form.fav.value;
-  const res = await createArtist(name, birthdate, activeSince, genres, labels, website, image, shortDescription, fav);
+  // const fav = form.fav.value;
+  const res = await createArtist(name, birthdate, activeSince, genres, labels, website, image, shortDescription);
   if (res.ok) {
     updateArtistGrid();
     form.reset();
@@ -155,4 +169,12 @@ function createCancelClicked() {
   document.querySelector("#dialog-create-artists").close();
 }
 
-export { updateArtistGrid };
+function filterCancelClicked() {
+  document.querySelector("#filter-dialog").close();
+}
+
+function filterArtistsClicked() {
+  document.querySelector("#filter-dialog").showModal();
+}
+
+export { updateArtistGrid, artists, showArtists };

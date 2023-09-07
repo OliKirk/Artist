@@ -1,5 +1,5 @@
 // "use strict";
-// import { artists, showArtists, updateArtistsGrid } from "./script.js";
+import { artists, showArtists } from "./script.js";
 
 // function searchArtists(searchValue) {
 //   searchValue = searchValue.toLowerCase();
@@ -11,30 +11,30 @@
 //   return results;
 // }
 
-// function sortByChanged(event) {
-//   const selectedValue = event.target.value;
-//   if (selectedValue === "name") {
-//     artists.sort(compareName);
-//   } else if (selectedValue === "genre") {
-//     artists.sort(compareGenre);
-//   }
-//   showArtists(artists);
-// }
-// //
-// function compareName(artist1, artist2) {
-//   return artist1.name.localeCompare(artist2.name);
-// }
+function sortByChanged(event) {
+  const selectedValue = event.target.value;
+  if (selectedValue === "name") {
+    artists.sort(compareName);
+  } else if (selectedValue === "genres") {
+    artists.sort(compareGenres);
+  }
+  showArtists(artists);
+}
 
-// function compareGenre(artist1, artist2) {
-//   return artist1.genre.localeCompare(artist2.genre);
-// }
+function compareName(artist1, artist2) {
+  return artist1.name.localeCompare(artist2.name);
+}
 
-// function filterByGenre(inputValue) {
-//   inputValue = inputValue.toLowerCase();
-//   if (inputValue !== "") {
-//     let filteredList = artists.filter((artist) => artist.genre.toLowerCase().includes(inputValue));
-//     return filteredList;
-//   }
-// }
+function compareGenres(artist1, artist2) {
+  return artist1.genres.localeCompare(artist2.genres);
+}
 
-// export { prepareArtists, searchArtists, sortByChanged, filterByGenre };
+function filterByGenre(inputValue) {
+  inputValue = inputValue.toLowerCase();
+  if (inputValue !== "") {
+    let filteredList = artists.filter((artist) => artist.genres.toLowerCase().includes(inputValue));
+    return filteredList;
+  }
+}
+
+export { filterByGenre, sortByChanged };
